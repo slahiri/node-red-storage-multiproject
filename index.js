@@ -144,6 +144,11 @@ var storage={
             url+="/"
             url+=settings.mongodbMultiproject.bd || "test"
         }
+        
+        if (settings.mongodbMultiprojectURL){
+            url = settings.mongodbMultiprojectURL;
+        }
+
         if (!settings.userDir) {
             try {
                 fs.statSync(fspath.join(process.env.NODE_RED_HOME,".config.json"));
